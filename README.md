@@ -20,8 +20,11 @@ In general the trained model(can be found in `model.zip`) coped with its task pr
 
 References:
 
-[1] Warden P., Speech Commands: A Dataset for Limited-Vocabulary Speech Recognition, [https://arxiv.org/pdf/1804.03209.pdf](https://arxiv.org/pdf/1804.03209.pdf)
+[1] Warden P., Speech Commands: A Dataset for Limited-Vocabulary Speech Recognition, 
+[https://arxiv.org/pdf/1804.03209.pdf](https://arxiv.org/pdf/1804.03209.pdf)
 
-[2] Graves A., Fernandez S., Gomez F. and Schmidhuber J., Connectionist Temporal Classification: Labelling Unsegmented Sequence Data with Recurrent Neural Networks, [https://www.cs.toronto.edu/~graves/icml_2006.pdf](https://www.cs.toronto.edu/~graves/icml_2006.pdf)
+[2] Graves A., Fernandez S., Gomez F. and Schmidhuber J., Connectionist Temporal Classification: Labelling Unsegmented Sequence Data with Recurrent Neural Networks, 
+[https://www.cs.toronto.edu/~graves/icml_2006.pdf](https://www.cs.toronto.edu/~graves/icml_2006.pdf)
 
-[3] Graves A, Supervised Sequence Labelling with Recurrent Neural Networks, [https://www.cs.toronto.edu/~graves/preprint.pdf](https://www.cs.toronto.edu/~graves/preprint.pdf)
+[3] Graves A, Supervised Sequence Labelling with Recurrent Neural Networks, 
+[https://www.cs.toronto.edu/~graves/preprint.pdf](https://www.cs.toronto.edu/~graves/preprint.pdf)
