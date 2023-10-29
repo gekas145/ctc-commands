@@ -10,18 +10,18 @@ Trained model was able to achieve 6.93%/8.92%/9.32% CER(character error rate) on
 
 Below plot shows CER in word groups. One of the hardest words were the short ones such as "off", "up", "go", "no", but also similarly pronounced ones as e.g. "bird" - "bed", "dog" - "down" or "tree" - "three".
 
-![Alt text](https://github.com/gekas145/ctc-commands/blob/main/images/cer_per_word.png)
+<img src="https://github.com/gekas145/ctc-commands/blob/main/images/cer_per_word.png" alt="drawing" width="500" height="400"/>
 
 The next plot demonstrates character probability distributions in time for word "happy".
 
-![Alt text](https://github.com/gekas145/ctc-commands/blob/main/images/happy_plot.png)
+<img src="https://github.com/gekas145/ctc-commands/blob/main/images/happy_plot.png" alt="drawing" width="500" height="400"/>
 
 In general the trained model(can be found in `model.zip`) coped with its task pretty well even though it overfitted to train set a bit. The task itself is hard even for humans, as the context is short and missing even single character can lead to word misunderstanding. It is also worth mentioning that experiments with unidirectional LSTM were conducted, but this kind of recurrent neural network was not able to deliver any meaningful results givin CER above 100%.
 
 References:
 
-[1] Warden P., Speech Commands: A Dataset for Limited-Vocabulary Speech Recognition, (https://arxiv.org/pdf/1804.03209.pdf)[https://arxiv.org/pdf/1804.03209.pdf]
+[1] Warden P., Speech Commands: A Dataset for Limited-Vocabulary Speech Recognition, [https://arxiv.org/pdf/1804.03209.pdf](https://arxiv.org/pdf/1804.03209.pdf)
 
-[2] Graves A., Fernandez S., Gomez F. and Schmidhuber J., Connectionist Temporal Classification: Labelling Unsegmented Sequence Data with Recurrent Neural Networks, (https://www.cs.toronto.edu/~graves/icml_2006.pdf)[https://www.cs.toronto.edu/~graves/icml_2006.pdf]
+[2] Graves A., Fernandez S., Gomez F. and Schmidhuber J., Connectionist Temporal Classification: Labelling Unsegmented Sequence Data with Recurrent Neural Networks, [https://www.cs.toronto.edu/~graves/icml_2006.pdf](https://www.cs.toronto.edu/~graves/icml_2006.pdf)
 
-[3] Graves A, Supervised Sequence Labelling with Recurrent Neural Networks, (https://www.cs.toronto.edu/~graves/preprint.pdf)[https://www.cs.toronto.edu/~graves/preprint.pdf]
+[3] Graves A, Supervised Sequence Labelling with Recurrent Neural Networks, [https://www.cs.toronto.edu/~graves/preprint.pdf](https://www.cs.toronto.edu/~graves/preprint.pdf)
