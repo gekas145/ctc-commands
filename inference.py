@@ -23,7 +23,7 @@ with torch.inference_mode():
     cer = 0.0
     length = 0
 
-    for n in range(len(testing)):
+    for n in range(len(labels)):
         log_probs = model(dataset.dataset.waveforms[n]).tolist()
         pred = beam_search(log_probs, vocab, 5)[0][0]
         # pred = greedy(log_probs, vocab)[0]

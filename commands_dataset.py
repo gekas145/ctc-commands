@@ -80,11 +80,11 @@ vocab2index = dict(zip(vocab, range(len(vocab))))
 label_max_length = reduce(lambda x, y: max(x, len(y)), all_labels, 0)
 
 # load data
-training = load_filenames("ctc_commands/data_division/training_list.txt")
+training = load_filenames("data_division/training_list.txt")
 
-validation = load_filenames("ctc_commands/data_division/validation_list.txt")
+validation = load_filenames("data_division/validation_list.txt")
 
-testing = load_filenames("ctc_commands/data_division/testing_list.txt")
+testing = load_filenames("data_division/testing_list.txt")
 
 
 # train_dataset = load_dataset(training, shuffle=True)

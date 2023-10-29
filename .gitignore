@@ -6,3 +6,5 @@ __pycache__/
 mini_speech_commands.*
 *.pt
 *.zip
+*.ipynb
+!model.zip
