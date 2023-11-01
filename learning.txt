@@ -1,4 +1,5 @@
-train CER 6.93%, val CER 8.92%, test CER 9.32%(9.64% with greedy search)
+beam search with width 5
+train CER 6.93%, val CER 8.92%, test CER 9.32%(9.64% with greedy, 8.31% with constrained)
 [Epoch: 1] train loss: 2.99, validation loss: 3.14
 [Epoch: 2] train loss: 1.79, validation loss: 2.11
 [Epoch: 3] train loss: 1.33, validation loss: 1.68

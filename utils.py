@@ -141,7 +141,20 @@ def beam_search(char_scores, vocab, n, return_probs=True):
 
 
 
-def greedy(char_scores, vocab):
+def greedy_search(char_scores, vocab):
+    ''' 
+    Performs greedy search for CTC loss inference.
+
+    Args:
+
+    char_scores   - 2d array of shape (m, len(vocab)), where m is number of timesteps, containing chars log probs,
+    vocab         - string containing each character from vocabulary, vocab[0] has to be the blank char,
+
+    Return:
+
+    2d array of shape (1, 2) containing top prefix in the 1st column and its float score in the 2nd one.
+
+    '''
 
     best_path = np.argmax(char_scores, axis=-1)
     labelling = ""
@@ -158,7 +171,19 @@ def greedy(char_scores, vocab):
     return [labelling, np.prod(np.exp(np.max(char_scores, axis=-1)))]
 
 
-def constrained(char_scores, vocab, words):
+def constrained_search(char_scores, vocab, words):
+    ''' 
+    Performs constrained search for CTC loss inference.
+
+    Args:
+
+    char_scores   - 2d array of shape (m, len(vocab)), where m is number of timesteps, containing chars log probs,
+    vocab         - string containing each character from vocabulary, vocab[0] has to be the blank char,
+    Return:
+
+    2d array of shape (1, 2) containing top prefix in the 1st column and its float score in the 2nd one.
+
+    '''
     tok = {}
 
     for i, w in enumerate(words):
@@ -174,7 +199,6 @@ def constrained(char_scores, vocab, words):
     for t in range(1, T):
         for i, w in enumerate(words):
             for s in range(2*len(w) + 1):
-                print(t, s, i)
                 P = [tok[(t-1, s, i)]]
 
                 if s > 0:
@@ -208,7 +232,7 @@ if __name__ == "__main__":
 
     words = ["aa", "b"]
 
-    print(constrained(char_scores, vocab, words))
+    print(constrained_search(char_scores, vocab, words))
 
 
 

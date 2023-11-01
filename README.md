@@ -6,7 +6,7 @@ This repo contains model trained on audio commands dataset [1]. The dataset cont
 
 ## Results
 
-Trained model was able to achieve 6.93%/8.92%/9.32% CER(character error rate) on train/val/test respectively using beam search with width of 5. The greedy search gave 9.64% CER on test set, so further experiments were conducted using it what contributed to decreased calculation time.
+Trained model was able to achieve 6.93%/8.92%/9.32% CER(character error rate) on train/val/test respectively using beam search with width of 5. The greedy search and constrained search gave 9.64% CER and 8.31% CER on test set respectively. Constrained search was pretty helpful when correcting small grammar mistakes, but as it turns out the majority of CER was caused by whole words confounded with other(e.g. "bird" <-> "bed"). In order to check how model behaves without relying on any grammar infomation further experiments were carried out using greedy search. It was preferred over beam search as latter didn't give any substantial improvement in CER and was several times slower.
 
 Below plot shows CER in word groups. One of the hardest words were the short ones such as "off", "up", "go", "no", but also similarly pronounced ones as e.g. "bird" - "bed", "dog" - "down" or "tree" - "three".
 
