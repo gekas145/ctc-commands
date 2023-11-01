@@ -26,5 +26,5 @@ References:
 [2] Graves A., Fernandez S., Gomez F. and Schmidhuber J., Connectionist Temporal Classification: Labelling Unsegmented Sequence Data with Recurrent Neural Networks, 
 [https://www.cs.toronto.edu/~graves/icml_2006.pdf](https://www.cs.toronto.edu/~graves/icml_2006.pdf)
 
-[3] Graves A, Supervised Sequence Labelling with Recurrent Neural Networks, 
+[3] Graves A., Supervised Sequence Labelling with Recurrent Neural Networks, 
 [https://www.cs.toronto.edu/~graves/preprint.pdf](https://www.cs.toronto.edu/~graves/preprint.pdf)
