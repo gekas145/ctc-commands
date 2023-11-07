@@ -2,17 +2,17 @@
 
 ## Setup
 
-This repo contains model trained on audio commands dataset [1]. The dataset contains total of 30 words pronounced by different English speakers and was divided into train/val/test sets in accordance with [1], exact filenames can be found in `data_division` for ease of use. Raw audio files were preprocessed by computing their spectgorams which were than fed to BLSTM network. The network itself was trained to output the distributions of vocabulary characters(24 in total) for each spectrogram time step, which were than optimized to minimize the CTC loss [2, 3]. Inference was done by beam search and greedy search algorithms, both of which gave similar results due to very limited context of the task.
+This repo contains model trained on version 1 of audio commands dataset [1]. The dataset contains total of 30 words pronounced by different English speakers and was divided into train/val/test sets in accordance with [1], exact filenames can be found in `data_division` for the ease of use. Raw audio files were preprocessed by computing their spectgorams which were than fed to BLSTM network. The network itself was trained to output the distributions of vocabulary characters(24 in total) for each spectrogram time step, which were than optimized to minimize the CTC loss [2, 3]. Inference was done by greedy, beam and constrained [3] search algorithms.
 
 ## Results
 
 Trained model was able to achieve 6.93%/8.92%/9.32% CER(character error rate) on train/val/test respectively using beam search with width of 5. The greedy search and constrained search gave 9.64% CER and 8.31% CER on test set respectively. Constrained search was pretty helpful when correcting small grammar mistakes, but as it turns out the majority of CER was caused by whole words confounded with other(e.g. "bird" <-> "bed"). In order to check how model behaves without relying on any grammar infomation further experiments were carried out using greedy search. It was preferred over beam search as latter didn't give any substantial improvement in CER and was several times slower.
 
-Below plot shows CER in word groups. One of the hardest words were the short ones such as "off", "up", "go", "no", but also similarly pronounced ones as e.g. "bird" - "bed", "dog" - "down" or "tree" - "three".
+Below plot shows CER on test set by words. Ones of the hardest words were the short ones such as "off", "up", "go", "no", but also similarly pronounced ones as e.g. "bird" - "bed", "dog" - "down" or "tree" - "three".
 
 <img src="https://github.com/gekas145/ctc-commands/blob/main/images/cer_per_word.png" alt="drawing" width="500" height="400"/>
 
-The next plot demonstrates character probability distributions in time for word "happy".
+The next plot demonstrates character probability distributions in time for recording of word "happy".
 
 <img src="https://github.com/gekas145/ctc-commands/blob/main/images/happy_plot.png" alt="drawing" width="500" height="400"/>
 
